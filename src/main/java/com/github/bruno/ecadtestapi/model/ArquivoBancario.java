@@ -1,6 +1,7 @@
 package com.github.bruno.ecadtestapi.model;
 
 import com.github.bruno.ecadtestapi.enums.TipoArquivo;
+import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -9,6 +10,7 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "arquivos_bancarios")
+@Data
 public class ArquivoBancario {
 
     @Id

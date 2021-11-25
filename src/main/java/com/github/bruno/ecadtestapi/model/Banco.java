@@ -1,10 +1,13 @@
 package com.github.bruno.ecadtestapi.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
 @Table(name = "bancos")
+@Data
 public class Banco {
 
     @Id

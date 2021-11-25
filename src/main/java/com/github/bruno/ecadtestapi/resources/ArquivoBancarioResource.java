@@ -1,4 +1,4 @@
-package com.github.bruno.ecadtestapi;
+package com.github.bruno.ecadtestapi.resources;
 
 import com.github.bruno.ecadtestapi.model.ArquivoBancario;
 import com.github.bruno.ecadtestapi.repository.ArquivoBancarioRepository;
@@ -22,7 +22,7 @@ public class ArquivoBancarioResource {
     ArquivoBancarioRepository repository;
 
     @GetMapping
-    public ResponseEntity<?> listarTodos(){
+    public ResponseEntity findAll(){
 
         List<ArquivoBancario> listaArquivos = repository.findAll();
 
