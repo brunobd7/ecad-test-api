@@ -15,6 +15,8 @@ public class ArquivoBancarioFilter {
 
     private TipoArquivo tipoArquivo;
 
+    private String nomeArquivo;
+
     public LocalDate getDataInicial() {
         return dataInicial;
     }
@@ -37,5 +39,13 @@ public class ArquivoBancarioFilter {
 
     public void setTipoArquivo(TipoArquivo tipoArquivo) {
         this.tipoArquivo = tipoArquivo;
+    }
+
+    public String getNomeArquivo() {
+        return nomeArquivo;
+    }
+
+    public void setNomeArquivo(String nomeArquivo) {
+        this.nomeArquivo = nomeArquivo;
     }
 }
