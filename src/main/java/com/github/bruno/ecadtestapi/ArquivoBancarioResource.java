@@ -34,23 +34,23 @@ public class ArquivoBancarioResource {
 
     }
 
-    @GetMapping
-    public ResponseEntity<?> filtrar(ArquivoBancarioFilter arquivoBancarioFilter){
-        List<ArquivoBancario> listaArquivos = listaArquivos = repository
-                .filtrarArquivos(arquivoBancarioFilter.getDataInicial(),arquivoBancarioFilter.getDataFinal(), arquivoBancarioFilter.getTipoArquivo());
-
-        if (Objects.nonNull(listaArquivos) && !listaArquivos.isEmpty()) {
-            return ResponseEntity.ok(listaArquivos);
-        } else {
-            return ResponseEntity.noContent().build();
-        }
-    }
+//    @GetMapping
+//    public ResponseEntity<?> filtrar(ArquivoBancarioFilter arquivoBancarioFilter){
+//        List<ArquivoBancario> listaArquivos = listaArquivos = repository
+//                .filtrarArquivos(arquivoBancarioFilter.getDataInicial(),arquivoBancarioFilter.getDataFinal(), arquivoBancarioFilter.getTipoArquivo());
+//
+//        if (Objects.nonNull(listaArquivos) && !listaArquivos.isEmpty()) {
+//            return ResponseEntity.ok(listaArquivos);
+//        } else {
+//            return ResponseEntity.noContent().build();
+//        }
+//    }
 
     @GetMapping("/{id}")
     public ResponseEntity<ArquivoBancario> findById(@PathVariable Long id){
 
         ArquivoBancario arquivoSalvo = repository.findById(id).orElse(null);
 
-        return Objects.isNull(arquivoSalvo) ? ResponseEntity.notFound().build() : ResponseEntity.ok(arquivoSalvo);
+        return Objects.isNull(arquivoSalvo) ? ResponseEntity.noContent().build() : ResponseEntity.ok(arquivoSalvo);
     }
 }

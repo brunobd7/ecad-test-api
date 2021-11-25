@@ -11,6 +11,6 @@ import java.util.List;
 public interface ArquivoBancarioRepository extends JpaRepository<ArquivoBancario,Long> {
 
     //TODO IMPLEMENTAR QUERY NATIVA
-    @Query(value = "", nativeQuery = true)
-    List<ArquivoBancario> filtrarArquivos(LocalDate dataInicial, LocalDate dataFinal, TipoArquivo tipoArquivo);
+//    @Query(value = "", nativeQuery = true)
+//    public List<ArquivoBancario> filtrarArquivos(LocalDate dataInicial, LocalDate dataFinal, TipoArquivo tipoArquivo);
 }

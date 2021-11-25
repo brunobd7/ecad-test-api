@@ -21,7 +21,7 @@ public class ArquivoBancario {
     @Column(name = "quantidade_linhas")
     private Integer quantidadeLinhas;
 
-    @Column(name = "data_geraao")
+    @Column(name = "data_geracao")
     private LocalDate dataGeracao;
 
     @Column(name = "data_envio")
