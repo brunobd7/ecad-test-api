@@ -3,17 +3,19 @@ package com.github.bruno.ecadtestapi.repository.filter;
 import com.github.bruno.ecadtestapi.enums.TipoArquivo;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import java.time.LocalDate;
 
 public class ArquivoBancarioFilter {
 
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataInicial;
 
-    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataFinal;
 
-    private TipoArquivo tipoArquivo;
+    private String tipoArquivo;
 
     private String nomeArquivo;
 
@@ -33,19 +35,19 @@ public class ArquivoBancarioFilter {
         this.dataFinal = dataFinal;
     }
 
-    public TipoArquivo getTipoArquivo() {
-        return tipoArquivo;
-    }
-
-    public void setTipoArquivo(TipoArquivo tipoArquivo) {
-        this.tipoArquivo = tipoArquivo;
-    }
-
     public String getNomeArquivo() {
         return nomeArquivo;
     }
 
     public void setNomeArquivo(String nomeArquivo) {
         this.nomeArquivo = nomeArquivo;
+    }
+
+    public String getTipoArquivo() {
+        return tipoArquivo;
+    }
+
+    public void setTipoArquivo(String tipoArquivo) {
+        this.tipoArquivo = tipoArquivo;
     }
 }
