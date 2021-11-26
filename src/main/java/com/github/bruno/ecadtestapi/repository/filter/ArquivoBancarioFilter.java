@@ -15,7 +15,8 @@ public class ArquivoBancarioFilter {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dataFinal;
 
-    private String tipoArquivo;
+    @Enumerated(EnumType.STRING)
+    private TipoArquivo tipoArquivo;
 
     private String nomeArquivo;
 
@@ -43,11 +44,11 @@ public class ArquivoBancarioFilter {
         this.nomeArquivo = nomeArquivo;
     }
 
-    public String getTipoArquivo() {
+    public TipoArquivo getTipoArquivo() {
         return tipoArquivo;
     }
 
-    public void setTipoArquivo(String tipoArquivo) {
+    public void setTipoArquivo(TipoArquivo tipoArquivo) {
         this.tipoArquivo = tipoArquivo;
     }
 }

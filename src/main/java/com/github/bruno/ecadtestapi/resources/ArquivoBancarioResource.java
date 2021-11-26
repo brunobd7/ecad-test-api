@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -36,8 +35,8 @@ public class ArquivoBancarioResource {
 
     @GetMapping
     public ResponseEntity filtrar(ArquivoBancarioFilter arquivoBancarioFilter){
-        List<ArquivoBancario> listaArquivos = repository.filtrarArquivos(arquivoBancarioFilter.getNomeArquivo(), arquivoBancarioFilter.getTipoArquivo(),
-                arquivoBancarioFilter.getDataInicial(), arquivoBancarioFilter.getDataFinal());
+
+        List<ArquivoBancario> listaArquivos = repository.filtrarArquivos(arquivoBancarioFilter);
 
         if (Objects.nonNull(listaArquivos) && !listaArquivos.isEmpty()) {
             return ResponseEntity.ok(listaArquivos);
